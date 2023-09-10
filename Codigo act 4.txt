@@ -1,0 +1,14 @@
+using UnityEngine;
+
+public class MovimientoPlanetario : MonoBehaviour
+{
+    public float orbitSpeed = 10.0f; // Ajustar velocidad de traslacion
+    public float rotationSpeed = 20.0f; // Esta es la velocidad de rotacion
+
+    private void Update()
+    {
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+
+        transform.RotateAround(Vector3.zero, Vector3.up, orbitSpeed * Time.deltaTime);
+    }
+}
